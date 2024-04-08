@@ -118,7 +118,7 @@ export function GetMap(mapid) {
     const [mapData, setMapData] = useState(null);
 
     useEffect(() => {
-        fetch(`http://localhost:3000/api/map/${mapid}`)
+        fetch(`https://valorant-tracker-group.pages.dev/api/map/${mapid}`)
             .then(response => response.json())
             .then(data => {
                 setMapData(data);

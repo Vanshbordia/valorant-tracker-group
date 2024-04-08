@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link'
 export default async function Page() {
-  const response = await fetch("http://localhost:3000/api/matchlist");
+  const response = await fetch("https://valorant-tracker-group.pages.dev/api/matchlist");
   const data = await response.json(); // Parse JSON data
   const matchlist = data.uniqueMatches; // Access uniqueMatches array
 

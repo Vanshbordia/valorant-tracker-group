@@ -1,6 +1,6 @@
 export async function GET(request, { params }) {
     // Fetch the mapping data from the secondary API
-    const mappingDataResponse = await fetch('http://localhost:3000/api/map');
+    const mappingDataResponse = await fetch('https://valorant-tracker-group.pages.dev/api/map');
     const mappingData = await mappingDataResponse.json();
 
     // Find the UUID corresponding to the provided map name
