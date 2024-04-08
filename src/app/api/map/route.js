@@ -1,3 +1,4 @@
+
 export async function GET() {
     try {
         const response = await fetch(`https://valorant-api.com/v1/maps`);
