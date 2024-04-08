@@ -1,3 +1,4 @@
+export const runtime = 'edge';
 export async function GET(request, { params }) {
     // Fetch the mapping data from the secondary API
     const mappingDataResponse = await fetch('https://valorant-tracker-group.pages.dev/api/map');
