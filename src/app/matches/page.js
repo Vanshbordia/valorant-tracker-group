@@ -19,13 +19,14 @@ export default async function Page() {
 
 function MatchCard({ match }) {
   const gameStartTime = new Date(match.gameStartTimeMillis);
+  const gameStartTimeIST = new Date(gameStartTime.toLocaleString("en-US", { timeZone: "Asia/Kolkata" }));
 
   return (
 
     <Link href={`/matches/${match.matchId}`}>
       <div className="border border-gray-300 rounded-lg p-4 cursor-pointer hover:bg-gray-100">
         <h3 className="text-xl font-bold">Match ID: {match.matchId}</h3>
-        <p className="text-sm text-gray-500">Date: {gameStartTime.toLocaleString()}</p>
+        <p className="text-sm text-gray-500">Date: {gameStartTimeIST.toLocaleString()}</p>
         <p>{match.queueId}</p>
       </div>
     </Link>
