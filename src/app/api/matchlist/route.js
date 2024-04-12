@@ -1,3 +1,5 @@
+export const runtime = 'edge';
+
 export const revalidate = 3600;
 
 import grouids from "@/player.json";
@@ -7,7 +9,7 @@ export async function GET() {
     const allMatches = []; // Array to store all match data
 
     for (const puuid of puuidArray) {
-        const response = await fetch(`https://ap.api.riotgames.com/val/match/v1/matchlists/by-puuid/${puuid}?api_key=${process.env.riotAPI}`);
+        const response = await fetch(`https://ap.api.riotgames.com/val/match/v1/matchlists/by-puuid/${puuid}?api_key=${process.env.riotAPI}`, { cache: 'no-store' });
         const matchData = await response.json();
 
         // Add matches from history to allMatches array
